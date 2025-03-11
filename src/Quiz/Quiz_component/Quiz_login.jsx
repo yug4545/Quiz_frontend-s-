@@ -274,13 +274,13 @@ const Quiz_login = () => {
               sx={{ color: 'white' }}
             />
             <Button type="submit" variant="contained" color="primary" fullWidth sx={{ backgroundColor: '#00fb54', color: 'black' }}>
-              {isSignIn ? 'Sign In' : 'Sign Up'}
+              {isSignIn ? 'Log in' : 'Sign Up'}
             </Button>
           </form>
           <Typography sx={{ mt: 2, color: 'white' }} >
             {isSignIn ? "Don't have an account? " : "Already have an account? "}
             <Button onClick={() => { setIsSignIn(!isSignIn) }} >
-              {isSignIn ? 'Sign Up' : 'Sign In'}
+              {isSignIn ? 'Sign Up' : 'Log in'}
             </Button>
           </Typography>
         </Box>
