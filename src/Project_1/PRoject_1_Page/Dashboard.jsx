@@ -15,9 +15,9 @@ const Dashboard = () => {
         try {
             setLoading(true);
 
-            let res = await axios.get("http://localhost:3001/category/read");
+            let res = await axios.get("https://quiz-backend-s.onrender.com/category/read");
 
-            let questionRes = await axios.get("http://localhost:3001/question/read");
+            let questionRes = await axios.get("https://quiz-backend-s.onrender.com/question/read");
 
             setCategorydata(res.data.data);
             setSubCategory(res.data.totalsubcategory);

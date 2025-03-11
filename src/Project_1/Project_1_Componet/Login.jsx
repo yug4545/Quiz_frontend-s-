@@ -32,7 +32,7 @@ const Login = () => {
       
       try {
         setLoader(true);
-        let res = await axios.post("http://localhost:3001/admin/login", values);
+        let res = await axios.post("https://quiz-backend-s.onrender.com/admin/login", values);
 
         localStorage.setItem("Token", res.data.token);
 

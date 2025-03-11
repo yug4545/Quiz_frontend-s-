@@ -34,7 +34,7 @@ const Question = () => {
 
             if (id.length >= 0) {
                 try {
-                    res = await axios.patch(`http://localhost:3001/question/update/${id}`, values)
+                    res = await axios.patch(`https://quiz-backend-s.onrender.com/update/${id}`, values)
                     setid(-1);
                     getdata();
                 } catch (error) {
@@ -43,7 +43,7 @@ const Question = () => {
             }
             else {
                 try {
-                    res = await axios.post("http://localhost:3001/question/create", values);
+                    res = await axios.post("https://quiz-backend-s.onrender.com/create", values);
                     getdata();
 
                 } catch (error) {
@@ -73,7 +73,7 @@ const Question = () => {
     let getdata = async () => {
         setloader(true);
         try {
-            let res = await axios.get("http://localhost:3001/question/read");
+            let res = await axios.get("https://quiz-backend-s.onrender.com/read");
             let ress = await axios.get("http://localhost:3001/category/read");
             setQuestion(res.data.data);
 
@@ -109,7 +109,7 @@ const Question = () => {
 
     async function Delete() {
         try {
-            let res = await axios.delete(`http://localhost:3001/question/delete/${DeleteId}`)
+            let res = await axios.delete(`https://quiz-backend-s.onrender.com/delete/${DeleteId}`)
             toast.success(res.data.message)
             getdata();
             setSearcH(null);

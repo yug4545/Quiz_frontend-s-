@@ -85,7 +85,7 @@ const Quiz_game = () => {
 
   let Getquestion = async () => {
     try {
-      let res = await axios.get('http://localhost:3001/question/read');
+      let res = await axios.get('https://quiz-backend-s.onrender.com/read');
       setAllquestion(res.data.data);
     } catch (error) {
       console.log(error.message);

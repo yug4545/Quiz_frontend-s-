@@ -34,7 +34,7 @@ const Signup = () => {
       try {
         setloader(true);
 
-        let res = await axios.post("http://localhost:3001/admin/signup", values);
+        let res = await axios.post("https://quiz-backend-s.onrender.com/admin/signup", values);
 
         localStorage.setItem("Token", res.data.token)
 

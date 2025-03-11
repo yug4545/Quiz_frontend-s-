@@ -31,7 +31,7 @@ const Quiz_login = () => {
 
     try {
 
-      let res = await axios.post('http://localhost:3001/user/login', inputValues);
+      let res = await axios.post('https://quiz-backend-s.onrender.com/user/login', inputValues);
 
       localStorage.setItem('token', res.data.token);
       let userExists = res.data.data?.name;
@@ -94,7 +94,7 @@ const Quiz_login = () => {
     }
 
     try {
-      let res = await axios.post('http://localhost:3001/user/signup', inputValues);
+      let res = await axios.post('https://quiz-backend-s.onrender.com/signup', inputValues);
       console.log(res.data);
 
 

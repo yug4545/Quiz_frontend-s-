@@ -37,7 +37,7 @@ const Category = () => {
             
             if (id.length != null) {
                 try {
-                    res = await axios.patch(`http://localhost:3001/category/update/${id}`,values)
+                    res = await axios.patch(`https://quiz-backend-s.onrender.com/category/update/${id}`,values)
                     console.log("Submit====> " + id);
                     setid(null);
                     getdata();
@@ -47,7 +47,7 @@ const Category = () => {
             }
             else {
                 try {
-                    res = await axios.post("http://localhost:3001/category/create", { category: values.category, subcategory: values.subcategory });
+                    res = await axios.post("https://quiz-backend-s.onrender.com/category/create", { category: values.category, subcategory: values.subcategory });
                 } catch (error) {
                     toast.error(error);
 
@@ -63,7 +63,7 @@ const Category = () => {
     let getdata = async () => {
         setloader(true);
         try {
-            let res = await axios.get("http://localhost:3001/category/read", {
+            let res = await axios.get("https://quiz-backend-s.onrender.com/category/read", {
                 headers: {
                     Authorization: token
                 }
@@ -93,7 +93,7 @@ const Category = () => {
 
     async function Delete() {
         try {
-            let res = await axios.delete(`http://localhost:3001/category/delete/${DeleteId}`)
+            let res = await axios.delete(`https://quiz-backend-s.onrender.com/category/delete/${DeleteId}`)
             toast.success(res.data.message)
             getdata();
             setSearcH(null);

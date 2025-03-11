@@ -39,7 +39,7 @@ const Quiz_Home = () => {
 
     let getcategory = async () => {
         try {
-            let res = await axios.get('http://localhost:3001/category/read')
+            let res = await axios.get('https://quiz-backend-s.onrender.com/category/read')
             setcategory(res.data.data)
 
         } catch (error) {
