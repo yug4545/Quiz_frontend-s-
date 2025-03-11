@@ -1,0 +1,70 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+.login-100 {
+    height: 100vh !important;
+}
+.Active-Category {
+    background-color: #00fb54 !important;
+    color: #1d1d1d !important;
+    box-shadow: 0px 4px 7px rgba(0, 251, 84, 0.4), 0px 0px 15px rgba(0, 251, 84, 0.6);
+    border-radius: 8px; /* Optional for rounded corners */
+    transition: all 0.3s ease-in-out;
+}
+
+.Demo:hover {
+    box-shadow: 0px 2px 3px rgba(0, 251, 84, 0.6), 0px 0px 5px rgba(0, 251, 84, 0.8);
+}
+
+.DashBoard-Box {
+    height: 148px;
+    width: 405px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px #ccc;
+    ;
+}
+
+
+.cow {
+    height: 200px !important;
+    margin-top: 50px;
+    z-index: -1;
+    text-align: end;
+    position: absolute;
+}
+
+.cow-h-100 {
+    width: fit-content !important;
+    height: 65% !important;
+    animation: scroll-left 9s linear infinite;
+}
+.cow-h-100:nth-child(2){
+    height: 55% !important;
+}
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-650%);
+    }
+}
+
+.css-4raej3-MuiDrawer-docked .MuiDrawer-paper ,
+.css-zxdg2z ,
+.css-gdruyp-MuiDrawer-docked .MuiDrawer-paper{
+    background-color: #1d1d1d;
+}
+
+.css-zxdg2z {
+    height: 100vh;
+}
+.css-gdruyp-MuiDrawer-docked .MuiDrawer-paper,
+.css-4raej3-MuiDrawer-docked .MuiDrawer-pape{
+    border-right: 1px solid #ccc !important;
+}
