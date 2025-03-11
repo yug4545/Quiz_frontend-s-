@@ -94,7 +94,7 @@ const Quiz_login = () => {
     }
 
     try {
-      let res = await axios.post('https://quiz-backend-s.onrender.com/signup', inputValues);
+      let res = await axios.post('https://quiz-backend-s.onrender.com/user/signup', inputValues);
       console.log(res.data);
 
 
