@@ -40,7 +40,10 @@ const Quiz_login = () => {
       if (userExists) {
 
         toast.success(res.data.message);
-        history.push({ pathname: '/home', state: 0 });
+        let u = setInterval(() => {
+          history.push({ pathname: '/home', state: 0 });
+          clearInterval(u);
+        }, 1000);
 
       } else {
         toast.error(res.data.message);
