@@ -40,12 +40,7 @@ const Quiz_login = () => {
       if (userExists) {
 
         toast.success(res.data.message);
-
-        let u = setInterval(() => {
-
-          history.push({ pathname: '/home', state: 0 });
-          clearInterval(u)
-        }, 1000);
+        history.push({ pathname: '/home', state: 0 });
 
       } else {
         toast.error(res.data.message);
@@ -53,7 +48,7 @@ const Quiz_login = () => {
 
     } catch (error) {
       toast.error("Something went wrong");
-    }finally{
+    } finally {
       setLoading(false)
     }
 
@@ -115,7 +110,7 @@ const Quiz_login = () => {
       }, 1000);
     } catch (error) {
       toast.error(error.response?.data?.message || 'An error occurred during signup');
-    }finally{
+    } finally {
       setLoading(false);
     }
   };
@@ -279,7 +274,7 @@ const Quiz_login = () => {
               sx={{ color: 'white' }}
             />
             <Button type="submit" variant="contained" color="primary" fullWidth sx={{ backgroundColor: '#00fb54', color: 'black' }}>
-            {loading ? <CircularProgress size={24} sx={{ color: "black" }} /> : isSignIn ? "Log in" : "Sign Up"}
+              {loading ? <CircularProgress size={24} sx={{ color: "black" }} /> : isSignIn ? "Log in" : "Sign Up"}
             </Button>
           </form>
           <Typography sx={{ mt: 2, color: 'white' }} >
