@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, TextField, Typography, Container, Box, Checkbox, FormControlLabel } from '@mui/material';
+import { Button, TextField, Typography, Container, Box, Checkbox, FormControlLabel, CircularProgress } from '@mui/material';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import Stack from '@mui/material/Stack';
@@ -12,6 +12,7 @@ import { ToastContainer, toast } from 'react-toastify';
 const Quiz_login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
   const [isChecked, setIsChecked] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const [inputValues, setInputValues] = useState({
     name: '',
@@ -28,7 +29,7 @@ const Quiz_login = () => {
   };
   const handleSignIn = async (e) => {
     e.preventDefault();
-
+    setLoading(true);
     try {
 
       let res = await axios.post('https://quiz-backend-s.onrender.com/user/login', inputValues);
@@ -52,6 +53,8 @@ const Quiz_login = () => {
 
     } catch (error) {
       toast.error("Something went wrong");
+    }finally{
+      setLoading(false)
     }
 
   }
@@ -92,7 +95,7 @@ const Quiz_login = () => {
       toast.error("Mobile number must be 10 digits");
       return;
     }
-
+    setLoading(true);
     try {
       let res = await axios.post('https://quiz-backend-s.onrender.com/user/signup', inputValues);
       console.log(res.data);
@@ -112,6 +115,8 @@ const Quiz_login = () => {
       }, 1000);
     } catch (error) {
       toast.error(error.response?.data?.message || 'An error occurred during signup');
+    }finally{
+      setLoading(false);
     }
   };
 
@@ -274,7 +279,7 @@ const Quiz_login = () => {
               sx={{ color: 'white' }}
             />
             <Button type="submit" variant="contained" color="primary" fullWidth sx={{ backgroundColor: '#00fb54', color: 'black' }}>
-              {isSignIn ? 'Log in' : 'Sign Up'}
+            {loading ? <CircularProgress size={24} sx={{ color: "black" }} /> : isSignIn ? "Log in" : "Sign Up"}
             </Button>
           </form>
           <Typography sx={{ mt: 2, color: 'white' }} >
