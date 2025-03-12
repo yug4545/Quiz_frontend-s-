@@ -4,6 +4,7 @@ import Quiz_login from './Quiz_component/Quiz_login'
 import Quiz_Home from './Quiz_page/Quiz_Home';
 import Quiz_About from './Quiz_page/Quiz_About';
 import Quiz_game from './Quiz_page/Quiz_game';
+import Addmin_page from '../Project_1/PRoject_1_Page/index';
 
 import {
   BrowserRouter as Router,
@@ -17,25 +18,27 @@ const Quiz = () => {
     <div>
 
       <Router>
-          <Switch>
-            <Route exact path="/">
-              <Quiz_login />
-            </Route>
-            <Route path="/login">
-              <Quiz_login />
-            </Route>
-            <Route path="/game">
-              <Quiz_game />
-            </Route>
-            <Route path="/Home">
-              <Quiz_Home />
-            </Route>
-            <Route path="/About">
-              <Quiz_About />
-            </Route>
+        <Switch>
+          <Route exact path="/">
+            <Quiz_login />
+          </Route>
+          <Route path="/login">
+            <Quiz_login />
+          </Route>
+          <Route path="/game">
+            <Quiz_game />
+          </Route>
+          <Route path="/Home">
+            <Quiz_Home />
+          </Route>
+          <Route path="/About">
+            <Quiz_About />
+          </Route>
+          <Route path="/Admin">
+            <Addmin_page />
+          </Route>
 
-           
-          </Switch>
+        </Switch>
       </Router>
     </div>
   )
