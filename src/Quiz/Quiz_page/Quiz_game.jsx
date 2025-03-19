@@ -9,7 +9,7 @@ import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
 import DialogActions from '@mui/material/DialogActions';
 import Typography from '@mui/material/Typography';
-import img from '../Quiz_images/1 number.png';
+import img from '../Quiz_images/medal-awards-and-trophies-png.webp';
 import { Box } from '@mui/material';
 import { Link } from "react-router-dom";
 import axios from 'axios';
